@@ -1,5 +1,6 @@
 import { Todo } from "../../model/model";
 import SingleTodo from "./SingleTodo";
+import './todos.css'
 
 interface props {
     todos: Array<Todo>;
