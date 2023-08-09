@@ -7,3 +7,15 @@ export interface RegisterRequest extends Request {
     password: string;
   };
 }
+export interface LoginRequest extends Request {
+  body: {
+    username: string;
+    password: string;
+  };
+}
+
+export interface User {
+  userID: string | number;
+  username: string;
+  password: string;
+}
