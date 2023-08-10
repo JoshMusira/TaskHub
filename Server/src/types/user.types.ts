@@ -19,3 +19,11 @@ export interface User {
   username: string;
   password: string;
 }
+
+export interface UserInfo {
+  userID: string;
+  username: string;
+  password: string;
+  iat: number;
+  exp: number;
+}
