@@ -25,3 +25,18 @@ export const NewTask = ( req: TaskRequest, res: Response) => {
         res.json({error: error});
     }
 };
+
+export const GetTask = async (req:TaskRequest, res: Response) => {
+    try {
+        const {userID} = req.user!
+        const { recordset} = await db.executeProcedure("GetTask", {userID});
+        if (!recordset[0]){
+            return res.json({message: "No task found"})
+        }
+        res.status(200).json({projects: recordset})
+        
+    } catch (error: any) {
+        res.json({error: error.message});
+        
+    }
+};

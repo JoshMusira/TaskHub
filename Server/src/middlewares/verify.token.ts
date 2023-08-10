@@ -17,7 +17,6 @@ export const VerifyToken = (
     next: NextFunction
 ) => {
     const token = req.headers["token"] as string;
-    console.log(token);
     try{
         if(!token){
             return res.status(401).json({message: "Unauthorized"})
