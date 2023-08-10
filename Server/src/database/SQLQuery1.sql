@@ -8,7 +8,7 @@ CREATE TABLE task (
   id INT PRIMARY KEY,
   userID INT NOT NULL,
   name VARCHAR(100) NOT NULL,
-  date DATE NOT NULL,
+  -- date DATE NOT NULL,
   status VARCHAR(20) NOT NULL,
   FOREIGN KEY (userID) REFERENCES users(userID)
 );

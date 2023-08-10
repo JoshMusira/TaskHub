@@ -32,4 +32,11 @@ export class Connection {
     return await request.execute(procedureName);
   }
 
+    //   We will call this function whenever we want query prefferably with a simple query
+    async executeQuery(query: string, params: { [x: string]: string }) {
+      let request = (await this.pool).request();
+      params ? (request = this.createRequest(request, params)) : request;
+      return await request.query(query);
+    }
+
 }
